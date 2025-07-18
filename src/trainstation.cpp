@@ -1,6 +1,7 @@
 #include "trainstation.h"
 #include "passenger_train.h"
 #include "intercity.h"
+#include "impl.cpp"
 
 #include <format>
 #include <iostream>
@@ -117,8 +118,8 @@ set<size_t> train_station::buy_train_ticket(const std::string &destination_train
             continue;
 
         if (!pimpl_->railway_lines_[i]->get_train_name().empty()) {
-            if ((si = pimpl_->railway_lines_[i]->get_railway_station_index(pimpl_->trainstation_name_)) != string::npos
-                && (ci = pimpl_->railway_lines_[i]->get_railway_station_index(destination_trainstation)) != string::npos
+            if ((si = pimpl_->railway_lines_[i]->get_impl()->get_railway_station_index(pimpl_->trainstation_name_)) != string::npos
+                && (ci = pimpl_->railway_lines_[i]->get_impl()->get_railway_station_index(destination_trainstation)) != string::npos
                 && si < ci) {
                 found = true;
                 trackway_numbers.emplace(i + 1);

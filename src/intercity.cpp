@@ -18,9 +18,9 @@ size_t inter_city::calculate_train_ticket_price(const string &src_railway_statio
 
     if (src_railway_station == dst_railway_station) return 0u;
 
-    const size_t first_railway_station_index = get_railway_station_index(src_railway_station);
+    const size_t first_railway_station_index = get_impl()->get_railway_station_index(src_railway_station);
 
-    const size_t last_railway_station_index = get_railway_station_index(dst_railway_station);
+    const size_t last_railway_station_index = get_impl()->get_railway_station_index(dst_railway_station);
 
 
     if (first_railway_station_index == string::npos || last_railway_station_index == string::npos ||
