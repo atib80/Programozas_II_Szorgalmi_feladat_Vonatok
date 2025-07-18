@@ -1,4 +1,5 @@
-# Szorgalmi feladat Programozas II egyetemi szintű tantárgyból: Vonatok
+# First homework assignment 'Trains' from ELTE University's Computer Science subject named: Programming II
 
-Az első szorgalmi példa, a Vonatok cimű feladat megoldása Programozás II tantárgyból, 
-amelyiket az unokaöcsémmel közösen oldottunk meg.
+This repository contains a solution to the first homework assignment titled 'Trains' 
+given out in the course of ELTE University's Computer Science subject named Programming II 
+that my nephew and me worked on together.

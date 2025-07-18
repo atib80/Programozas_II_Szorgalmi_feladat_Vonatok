@@ -1,0 +1,47 @@
+# CLion IDE files
+.idea*
+.vs*
+cmake-build-*/
+Debug/
+out/
+Release/
+x64/
+
+# Visual Studio solution/project files
+*.vcxproj
+*.vcxproj.user.filters
+*.vcxproj.user
+
+# CMake build files
+CMakeCache.txt
+CMakeFiles/
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+
+# Executables and Libraries
+*.exe
+*.dll
+*.so
+*.dylib
+*.o
+*.obj
+*.a
+*.lib
+
+# Editor-specific temporary files
+*~
+*.swp
+*.bak
+*.swo
+
+# Dependency management (e.g., Conan)
+# Uncomment or add if you use a package manager
+# build/
+# .conan/
+
+# Other temporary or generated files
+*.log
+*.tmp
+*.iml
