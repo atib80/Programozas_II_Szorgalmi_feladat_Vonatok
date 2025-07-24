@@ -19,7 +19,7 @@ struct train::impl {
 
     ~impl() = default;
 
-    size_t get_number_of_railway_stations() const noexcept;
+    [[nodiscard]] size_t get_number_of_railway_stations() const noexcept;
 
     void set_number_of_railway_stations(size_t number_of_railway_stations) noexcept;
 
@@ -51,7 +51,7 @@ inline size_t train::impl::get_railway_station_index(const string &allomas_nev) 
     if (const auto found_iter = std::ranges::find(railway_station_names_, allomas_nev);
         found_iter != end(railway_station_names_)) {
         return static_cast<size_t>(found_iter - begin(railway_station_names_));
-        }
+    }
 
     return string::npos;
 }

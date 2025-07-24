@@ -2,12 +2,19 @@
 #define TRAINSTATION_H
 
 #include "train.h"
+#include "intercity.h"
+#include "passenger_train.h"
 
 #include <iosfwd>
 #include <memory>
 #include <string>
 #include <vector>
 #include <set>
+
+static_assert(train_type<train>);
+static_assert(train_type<inter_city>);
+static_assert(train_type<passenger_train>);
+
 
 class train_station {
     struct impl;
@@ -32,7 +39,7 @@ public:
 
     [[nodiscard]] size_t get_number_of_railways() const;
 
-    [[nodiscard]] const std::vector<std::shared_ptr<train> > &get_railways() const;
+    [[nodiscard]] const std::vector<std::shared_ptr<train>> &get_railways() const;
 
     void set_trainstation_name(const std::string &) const;
 

@@ -11,12 +11,13 @@
 using namespace std;
 
 int main() {
-    const auto tr1 = std::make_shared<train>("regular_train_data.lst");
-    const auto pt = std::make_shared<passenger_train>("passanger_train_data.lst");
-    const auto ict = std::make_shared<inter_city>("intercity_train_data.lst");
+    auto tr1 = std::make_shared<train>("G:/regular_train_data.lst");
+    auto pt = std::make_shared<passenger_train>("G:/passanger_train_data.lst");
+    auto ict = std::make_shared<inter_city>("G:/intercity_train_data.lst");
 
     while (true) {
         system("cls");
+
         cout << "Information on train 'tr1':\n\n";
         tr1->display_information_about_train();
 
@@ -100,10 +101,11 @@ int main() {
             railway_line_index = stoul(chosen_railway_line_index);
 
             if (found_trains.contains(railway_line_index)) {
-                const auto departed_train = trainstation.departs(railway_line_index - 1, cout);
-                cout << std::format("Train {} left railway station {} and is going to railway station {}.\n",
-                                    departed_train->get_train_name(), trainstation.get_trainstation_name(),
-                                    destination);
+                if (auto departed_train = trainstation.departs(railway_line_index - 1, cout)) {
+                    cout << std::format("Train {} left railway station {} and is going to railway station {}.\n",
+                                        departed_train->get_train_name(), trainstation.get_trainstation_name(),
+                                        destination);
+                }
             }
         }
     }
